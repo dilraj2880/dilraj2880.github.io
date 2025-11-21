@@ -101,3 +101,14 @@
 </body>
 </html>
 <a id="whatsappBtn" href="https://wa.me/919351996276?text=Hi%20Dilraj!%20I%20want%20a%20landing%20page." target="_blank" rel="noopener" aria-label="WhatsApp" title="Chat on WhatsApp"></a>
+<script>
+  // show only on small/medium screens if you prefer (optional)
+  (function(){
+    const btn = document.getElementById('whatsappBtn');
+    if(!btn) return;
+    // hide on very large screens if you want: uncomment below
+    // if(window.innerWidth > 1200) btn.style.display = 'none';
+    // you can also add small entrance
+    setTimeout(()=> btn.style.transform = 'translateY(0)', 300);
+  })();
+</script>
