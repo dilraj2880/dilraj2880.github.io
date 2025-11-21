@@ -1,63 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dilraj — Web Developer</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <header class="hero">
-    <div class="container">
-      <div class="hero-left">
-        <h1>Dilraj — Fast & Clean Websites</h1>
-        <p class="lead">I build responsive landing pages and fix website issues quickly. Ready to deploy.</p>
-        <a class="btn" href="#contact">Get Started</a>
-      </div>
-      <div class="hero-right">
-        <img id="hero-img" src="https://images.unsplash.com/photo-1506765515384-028b60a970df?w=800&q=80" alt="hero" />
-      </div>
-    </div>
-  </header>
-
-  <section id="services" class="container section">
-    <h2>Services</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Landing Pages</h3>
-        <p>Fast, responsive and SEO-ready.</p>
-      </div>
-      <div class="card">
-        <h3>Site Fixes</h3>
-        <p>Quick CSS / responsive / layout fixes.</p>
-      </div>
-      <div class="card">
-        <h3>Contact Forms</h3>
-        <p>Working contact form with demo submit (no email setup required).</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="container section">
-    <h2>Contact</h2>
-    <form id="contactForm">
-      <input type="text" name="name" placeholder="Your name" required />
-      <input type="email" name="email" placeholder="Email" required />
-      <textarea name="message" placeholder="Message" required></textarea>
-      <button class="btn" type="submit">Send</button>
-    </form>
-    <p id="status"></p>
-  </section>
-
-  <footer class="container footer">
-    <p>© <span id="year"></span> Dilraj — Web Developer</p>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
-<style>
-  html {
-    scroll-behavior: smooth;
-  }
-</style>
+<form id="contactForm" action="https://formspree.io/f/xbjqzjrl" method="POST">
+  <input type="text" name="name" placeholder="Your name" required />
+  <input type="email" name="email" placeholder="Email" required />
+  <textarea name="message" placeholder="Message" required></textarea>
+  <button class="btn" type="submit">Send</button>
+</form>
+<p id="status"></p>
