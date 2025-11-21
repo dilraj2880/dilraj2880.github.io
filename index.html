@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dilraj — Modern Web Developer</title>
+    <title>Dilraj — Web Developer</title>
 
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    
+
     <!-- NAV -->
     <nav>
         <div class="container nav-inner">
@@ -22,56 +23,59 @@
     </nav>
 
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero fade-up">
         <div class="container hero-container">
-
             <div class="hero-left fade-up">
                 <h1>Dilraj — Fast & Clean Websites</h1>
-                <p class="lead">I build responsive landing pages and fix website issues quickly. Ready to deploy.</p>
-                <a href="#services" class="btn">Get Started</a>
+                <p class="lead">I build responsive landing pages and fix website issues quickly.</p>
+                <a href="#contact" class="btn">Get Started</a>
             </div>
 
-            <div class="hero-right">
-                <img id="hero-img" src="https://picsum.photos/1200/700?random=7" alt="hero image" loading="lazy" />
+            <div class="hero-right fade-up">
+                <img id="hero-img"
+                src="https://picsum.photos/700/450?random=5"
+                alt="hero image">
             </div>
         </div>
     </section>
 
- <!-- SERVICES SECTION -->
-<section id="services" class="section">
-  <div class="container">
-    <h2>Services</h2>
+    <!-- SERVICES -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2>Services</h2>
 
-    <div class="cards">
+            <div class="cards">
 
-      <div class="card fade-up">
-        <img src="icons/code.svg" class="service-icon" alt="code icon">
-        <h3>Landing Pages</h3>
-        <p>Fast, responsive and SEO-ready.</p>
-      </div>
+                <div class="card fade-up">
+                    <i class="fa-solid fa-laptop-code icon"></i>
+                    <h3>Landing Pages</h3>
+                    <p>Fast, responsive and SEO-ready.</p>
+                </div>
 
-      <div class="card fade-up">
-        <img src="icons/tools.svg" class="service-icon" alt="tools icon">
-        <h3>Bug Fixing</h3>
-        <p>Fix layout, CSS, UI and responsive issues.</p>
-      </div>
+                <div class="card fade-up">
+                    <i class="fa-solid fa-screwdriver-wrench icon"></i>
+                    <h3>Bug Fixing</h3>
+                    <p>Fix layout, CSS, UI, and responsive issues.</p>
+                </div>
 
-      <div class="card fade-up">
-        <img src="icons/web.svg" class="service-icon" alt="web icon">
-        <h3>Custom Websites</h3>
-        <p>Perfect for portfolios and business owners.</p>
-      </div>
+                <div class="card fade-up">
+                    <i class="fa-solid fa-code icon"></i>
+                    <h3>Custom Websites</h3>
+                    <p>Perfect for business & portfolio websites.</p>
+                </div>
 
-    </div>
-  </div>
-</section>
+            </div>
+        </div>
+    </section>
 
-    <!-- CONTACT -->
+    <!-- CONTACT FORM -->
     <section id="contact" class="section">
         <div class="container">
             <h2>Contact Me</h2>
 
-            <form id="contactForm" action="https://formspree.io/f/xbjqzjr1" method="POST">
+            <form id="contactForm"
+                  action="https://formspree.io/f/xbjqzjr1"
+                  method="POST">
                 <input type="text" name="name" placeholder="Your name" required />
                 <input type="email" name="email" placeholder="Email" required />
                 <textarea name="message" placeholder="Message" required></textarea>
@@ -87,11 +91,12 @@
         © 2025 Dilraj — All rights reserved.
     </footer>
 
+    <!-- SMALL SCRIPT -->
+    <script>
+      window.addEventListener('load', () => {
+        document.body.classList.add('loaded');
+      });
+    </script>
+
 </body>
 </html>
-<script>
-  // Page load hone ke baad hero ko fade-in kara dega
-  window.addEventListener('load', () => {
-    document.body.classList.add('loaded');
-  });
-</script>
