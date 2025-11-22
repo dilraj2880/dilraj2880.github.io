@@ -1,0 +1,24 @@
+:root{--bg:#fff;--accent:#ef6b48;--muted:#6b7280}
+*{box-sizing:border-box}body{font-family:Inter,system-ui,Arial;background:#fff;color:#0b1220;margin:0}
+.wrap{max-width:1100px;margin:0 auto;padding:0 18px}
+.site-header{padding:16px 0;display:flex;justify-content:space-between;align-items:center}
+.logo{font-weight:700;text-decoration:none;color:var(--accent)}
+.hero{padding:44px 0;background:linear-gradient(180deg,#fff7f2,#fff)}
+.hero-inner{display:flex;gap:20px;align-items:center}
+.hero-text h1{font-size:28px;margin:0 0 8px}
+.hero-media img{width:420px;border-radius:12px;box-shadow:0 18px 48px rgba(12,20,60,0.08)}
+.section{padding:28px 0}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.menu-card{background:#fff7f3;padding:16px;border-radius:10px;box-shadow:0 8px 24px rgba(12,20,60,0.04)}
+.btn{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none}
+.btn.primary{background:var(--accent);color:#fff}
+.btn.ghost{background:transparent;border:1px solid #f2d7cf}
+.btn.whatsapp{background:#25D366;color:#fff}
+.site-footer{padding:18px 0;text-align:center;color:var(--muted);font-size:14px}
+
+/* responsive */
+@media(max-width:880px){
+ .hero-inner{flex-direction:column}
+ .hero-media img{width:86%}
+ .grid-3{grid-template-columns:1fr}
+}
