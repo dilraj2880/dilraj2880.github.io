@@ -147,7 +147,57 @@
   </div>
   <button id="lbNext" class="lb-nav lb-next" aria-label="Next image">▶</button>
 </div>
-      
+     <!-- HIRE / CTA SECTION -->
+<section id="hire" class="section container">
+  <h2>Want a website? Let's build it.</h2>
+  <p class="lead">Quick, affordable websites for small businesses. Pick a plan and I’ll make a demo for your business.</p>
+
+  <div class="pricing-grid">
+    <article class="price-card">
+      <h3>Starter</h3>
+      <p class="price">₹999</p>
+      <p>Landing page, responsive, SEO basics. 1 revision.</p>
+      <button class="btn primary hire-btn" data-plan="Starter">Hire Starter</button>
+    </article>
+
+    <article class="price-card">
+      <h3>Business</h3>
+      <p class="price">₹2499</p>
+      <p>3 pages, contact form, portfolio, 2 revisions.</p>
+      <button class="btn primary hire-btn" data-plan="Business">Hire Business</button>
+    </article>
+
+    <article class="price-card">
+      <h3>Premium</h3>
+      <p class="price">₹3999</p>
+      <p>Custom features, booking/login (if needed), 4 revisions.</p>
+      <button class="btn primary hire-btn" data-plan="Premium">Hire Premium</button>
+    </article>
+  </div>
+</section>
+
+<!-- HIRE MODAL -->
+<div id="hireModal" class="modal" aria-hidden="true">
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="hireTitle">
+    <button class="modal-close" id="closeHire">×</button>
+    <h3 id="hireTitle">Get started — request a demo</h3>
+    <p id="selectedPlanText">Selected plan: <strong id="selectedPlan">Starter</strong></p>
+
+    <!-- change action to your Formspree / endpoint -->
+    <form id="hireForm" action="https://formspree.io/f/yourformid" method="POST" class="form">
+      <input type="hidden" name="plan" id="formPlan" value="Starter" />
+      <label class="sr-only">Name<input type="text" name="name" placeholder="Your name" required /></label>
+      <label class="sr-only">Email<input type="email" name="email" placeholder="Email" required /></label>
+      <label class="sr-only">Phone<input type="text" name="phone" placeholder="Phone (optional)"/></label>
+      <label class="sr-only">Details<textarea name="message" placeholder="Short brief (what you need)"></textarea></label>
+
+      <div class="modal-actions">
+        <button type="submit" class="btn primary">Send request</button>
+        <button type="button" class="btn" id="cancelHire">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div> 
 
     <!-- CONTACT -->
     <section id="contact" class="section container reveal">
