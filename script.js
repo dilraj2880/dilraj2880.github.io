@@ -250,3 +250,91 @@ document.addEventListener('DOMContentLoaded', function () {
     if (e.key === 'Escape') closeLB();
   });
 });
+// Lightbox with prev/next
+document.addEventListener('DOMContentLoaded', function () {
+  const links = Array.from(document.querySelectorAll('.portfolio-link'));
+  if (!links.length) return;
+
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  const lbCaption = document.getElementById('lbCaption');
+  const lbClose = document.getElementById('lbClose');
+  const lbPrev = document.getElementById('lbPrev');
+  const lbNext = document.getElementById('lbNext');
+
+  // Build gallery array of {src, alt}
+  const gallery = links.map(link => {
+    const img = link.querySelector('img');
+    return {
+      src: img ? img.getAttribute('src') : '',
+      alt: img ? img.getAttribute('alt') || '' : ''
+    };
+  });
+
+  let currentIndex = 0;
+
+  function openAt(index) {
+    const item = gallery[index];
+    if (!item) return;
+    lbImg.src = item.src;
+    lbImg.alt = item.alt;
+    lbCaption.textContent = item.alt;
+    lb.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('lb-open');
+    currentIndex = index;
+  }
+
+  function closeLB() {
+    lb.setAttribute('aria-hidden', 'true');
+    lbImg.src = '';
+    lbCaption.textContent = '';
+    document.body.classList.remove('lb-open');
+  }
+
+  function showNext() {
+    const next = (currentIndex + 1) % gallery.length;
+    openAt(next);
+  }
+  function showPrev() {
+    const prev = (currentIndex - 1 + gallery.length) % gallery.length;
+    openAt(prev);
+  }
+
+  // Attach click to each portfolio link
+  links.forEach((link, i) => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      openAt(i);
+    });
+  });
+
+  // Controls
+  lbClose.addEventListener('click', closeLB);
+  lbNext.addEventListener('click', function (e) { e.stopPropagation(); showNext(); });
+  lbPrev.addEventListener('click', function (e) { e.stopPropagation(); showPrev(); });
+
+  // Click backdrop to close (only when clicking the overlay, not inner)
+  lb.addEventListener('click', function (e) {
+    if (e.target === lb) closeLB();
+  });
+
+  // Keyboard navigation: Esc close, Left previous, Right next
+  document.addEventListener('keydown', function (e) {
+    if (lb.getAttribute('aria-hidden') === 'false') {
+      if (e.key === 'Escape') closeLB();
+      if (e.key === 'ArrowRight') showNext();
+      if (e.key === 'ArrowLeft') showPrev();
+    }
+  });
+
+  // Optional: swipe support (small, mobile)
+  let startX = null;
+  lb.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, {passive:true});
+  lb.addEventListener('touchend', (e) => {
+    if (!startX) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    if (dx > 40) showPrev();
+    else if (dx < -40) showNext();
+    startX = null;
+  }, {passive:true});
+});
