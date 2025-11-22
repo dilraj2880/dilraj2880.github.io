@@ -156,6 +156,18 @@
         <textarea name="message" placeholder="Message" required></textarea>
         <button type="submit" class="btn primary">Send</button>
       </form>
+       <!-- CONTACT: Success Modal + Toast -->
+<div id="successModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="successTitle">
+  <div class="modal-panel" role="document">
+    <button class="modal-close" id="closeSuccess" aria-label="Close">✕</button>
+    <h3 id="successTitle">Message sent ✅</h3>
+    <p>Thanks! I’ll get back to you soon.</p>
+    <button id="successOk" class="btn primary">Close</button>
+  </div>
+</div>
+
+<!-- small toast (bottom center) -->
+<div id="successToast" class="toast" aria-hidden="true">Message sent — thanks!</div> 
 
       <!-- status toast -->
       <div id="formStatus" class="toast" role="status" aria-live="polite" hidden></div>
