@@ -338,3 +338,50 @@ document.addEventListener('DOMContentLoaded', function () {
     startX = null;
   }, {passive:true});
 });
+// HIRE modal logic (add to your script.js)
+document.addEventListener('DOMContentLoaded', function(){
+  const hireBtns = document.querySelectorAll('.hire-btn');
+  const modal = document.getElementById('hireModal');
+  const selectedPlan = document.getElementById('selectedPlan');
+  const selectedPlanText = document.getElementById('selectedPlanText');
+  const formPlan = document.getElementById('formPlan');
+  const closeBtn = document.getElementById('closeHire');
+  const cancelBtn = document.getElementById('cancelHire');
+
+  function openModal(plan) {
+    selectedPlan.textContent = plan;
+    formPlan.value = plan;
+    modal.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(){
+    modal.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+
+  hireBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const plan = e.currentTarget.dataset.plan || 'Starter';
+      openModal(plan);
+    });
+  });
+  closeBtn && closeBtn.addEventListener('click', closeModal);
+  cancelBtn && cancelBtn.addEventListener('click', closeModal);
+
+  // close modal on outside click
+  modal && modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  // Optional: show a tiny toast after successful submit (Formspree will redirect unless using AJAX)
+  const hireForm = document.getElementById('hireForm');
+  if (hireForm) {
+    hireForm.addEventListener('submit', (e) => {
+      // if you want to use AJAX instead of Formspree redirect, uncomment below and replace action with JSON endpoint:
+      // e.preventDefault();
+      // fetch(hireForm.action, { method: 'POST', body: new FormData(hireForm) })
+      //  .then(()=> { closeModal(); alert('Request sent! I will contact you soon.'); })
+      //  .catch(()=> alert('There was an error. Try again.'));
+    });
+  }
+});
