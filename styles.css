@@ -672,3 +672,87 @@ body.lb-open { overflow: hidden; }
 .form input, .form textarea { width: 100%; padding: .9rem; margin-bottom: .6rem; border-radius: 8px; border: 1px solid #e6e9ef; }
 .modal-actions { display:flex; gap:.5rem; justify-content:flex-end; margin-top:.5rem; }
 .sr-only { display:block; } /* small labels kept visible for mobile accessibility */
+/* ---------- Hire CTA: full width button ---------- */
+.pricing-grid .price-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn.hire-btn {
+  display: block;
+  width: 100%;
+  padding: 14px 18px;
+  font-weight: 700;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(35,75,255,0.12);
+  transform: translateZ(0);
+  transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+  background: linear-gradient(90deg,#2f7df7,#1762ff); /* bright blue gradient */
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.btn.hire-btn:active { transform: translateY(1px); }
+.btn.hire-btn:hover {
+  box-shadow: 0 14px 36px rgba(23,98,255,0.18);
+  transform: translateY(-2px);
+}
+
+/* Smaller devices keep the same look but slightly larger padding */
+@media (max-width: 480px) {
+  .btn.hire-btn {
+    padding: 16px 18px;
+    font-size: 16px;
+    border-radius: 12px;
+  }
+}
+
+/* Modal polish: central panel, smooth fade */
+.modal.is-open { display:block; }
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(14, 22, 36, 0.5);
+  z-index: 1200;
+  padding: 20px;
+  transition: opacity .18s ease;
+}
+.modal-panel {
+  width: 100%;
+  max-width: 560px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 30px 60px rgba(8,20,40,0.18);
+}
+
+/* Title + plan text */
+#hireTitle { margin: 0 0 8px 0; font-size: 20px; }
+#selectedPlanText { color: #333; margin-bottom: 12px; }
+
+/* WhatsApp fallback button inside modal */
+#whatsappBtn {
+  display:inline-block;
+  margin-bottom: 12px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #25D366, #1EBE4C);
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Modal actions row */
+.modal-actions {
+  display:flex;
+  gap:10px;
+  justify-content:flex-end;
+  margin-top: 10px;
+}
+.modal-actions .btn { min-width:120px; }
