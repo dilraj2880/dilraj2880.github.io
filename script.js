@@ -568,3 +568,25 @@ document.querySelectorAll(".hire-btn").forEach(button => {
     setTimeout(()=> t.style.opacity = '0', 2000);
   }
 })();
+// Remove duplicate theme buttons (defensive)
+document.addEventListener('DOMContentLoaded', () => {
+  const toggles = document.querySelectorAll('[id="themeToggle"], .theme-toggle, .dark-toggle');
+  // keep first, remove rest
+  if (toggles.length > 1) {
+    toggles.forEach((el, i) => { if (i>0) el.remove(); });
+  }
+
+  // Ensure one proper toggle exists and position it
+  const btn = document.getElementById('themeToggle') || document.querySelector('.theme-toggle');
+  if (btn) {
+    btn.style.position = 'relative';
+    btn.style.top = '0';
+    btn.style.left = '0';
+    btn.setAttribute('aria-pressed', 'false');
+    btn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const pressed = document.body.classList.contains('dark-mode');
+      btn.setAttribute('aria-pressed', pressed.toString());
+    });
+  }
+});
