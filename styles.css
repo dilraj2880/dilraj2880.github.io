@@ -31,10 +31,33 @@ body{background:var(--bg);color:var(--text);line-height:1.5;-webkit-font-smoothi
 .nav-links a{color:var(--muted);text-decoration:none;padding:8px;border-radius:8px}
 .nav-links a:hover{color:var(--text)}
 
-/* Buttons */
-.btn{display:inline-block;padding:12px 20px;border-radius:12px;border:none;cursor:pointer;background:transparent}
-.btn.small{padding:8px 10px}
-.btn.primary{background:linear-gradient(90deg,var(--accent),#6aa8ff);color:white;box-shadow:0 8px 18px rgba(11,99,246,0.18);border-radius:14px}
+/* Unified button styles */
+.btn {
+  display: inline-block;
+  font-weight: 600;
+  padding: 0.6rem 1.05rem;
+  border-radius: 12px;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  line-height: 1;
+  transition: transform .12s ease, box-shadow .12s ease;
+  box-shadow: 0 6px 18px rgba(12, 40, 80, 0.06);
+}
+
+.btn.primary {
+  background: linear-gradient(90deg,#0b63ff,#0066cc);
+  color: #fff;
+  text-decoration: none; /* remove underline */
+}
+
+.btn.flat {
+  background: #f3f6fb;
+  color: #05386B;
+  border: 1px solid rgba(5,56,107,0.06);
+}
+
+.btn:active { transform: translateY(1px); }
 
 /* Hero */
 .hero{padding:40px 0;border-radius:18px;background:var(--card);box-shadow:var(--shadow);margin:20px 0;overflow:hidden}
