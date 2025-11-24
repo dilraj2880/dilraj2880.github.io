@@ -292,26 +292,29 @@
       
 
     <!-- CONTACT -->
-    <section id="contact" class="section container reveal">
-      <h2>Contact Me</h2>
+    <section id="contact" class="section container contact-section">
+    <h2>Contact Me</h2>
+    <p class="lead">Have a project in mind? Let’s talk.</p>
 
-      <!-- Use your Formspree action (I kept your earlier one). Replace if different. -->
-      <form id="contactForm" action="https://formsubmit.co/dilrajmeena2880@gmail.com" method="POST">
+    <form id="contact-form" class="contact-form">
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" placeholder="Your Name" required>
+        </div>
 
-    <!-- Disable Captcha -->
-    <input type="hidden" name="_captcha" value="false">
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="Your Email" required>
+        </div>
 
-    <!-- Redirect URL -->
-    <input type="hidden" name="_next" value="https://dilraj9351.github.io?success=true">
+        <div class="form-group">
+            <label>Message</label>
+            <textarea placeholder="Your Message" rows="4" required></textarea>
+        </div>
 
-    <input type="text" name="name" placeholder="Your name" required>
-
-    <input type="email" name="email" placeholder="Email" required>
-
-    <textarea name="message" placeholder="Message" required></textarea>
-
-    <button type="submit" class="btn primary">Send</button>
-      </form>
+        <button class="btn primary submit-btn">Send Message</button>
+    </form>
+    </section>
        <!-- CONTACT: Success Modal + Toast -->
 <div id="successModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="successTitle">
   <div class="modal-panel" role="document">
