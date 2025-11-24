@@ -946,3 +946,24 @@ body.dark-mode {
   color:#d7e1ef;
 }
 body.dark-mode .site-nav { background:#071428; }
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px; /* space between cards */
+  align-items: start;
+}
+
+.portfolio-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(12,40,80,0.06);
+}
+
+.portfolio-card .small-desc {
+  margin-top: 10px; /* spacing under image */
+  color: #66788a;
+  font-size: 0.95rem;
+}
