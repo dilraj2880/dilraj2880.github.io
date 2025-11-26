@@ -196,10 +196,18 @@ body.dark-mode .nav-link.active {
   gap:6px;
   padding:8px;
 }
-.nav-toggle .bar{
-  display:block; width:22px; height:3px; background:var(--accent); border-radius:3px;
-  margin:4px 0;
-  transition: transform .18s ease;
+/* toggle styling */
+.btn.theme-toggle {
+  border: 1px solid rgba(0,0,0,0.06);
+  background: transparent;
+  color: var(--text);
+  padding: 6px 10px;
+  border-radius: 10px;
+}
+
+/* example dark mode overrides */
+:root { --bg: #ffffff; --card: #f6f8fb; --text: #0f172a; --brand: #1d4ed8; }
+:root.dark-mode { --bg: #0b1220; --card: #0f1724; --text: #e6eef9; --brand: #3b82f6; }
 }
 
 /* small screens: collapse links into vertical panel */
