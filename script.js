@@ -590,3 +590,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+// theme toggle
+const themeToggle = document.getElementById('themeToggle');
+themeToggle?.addEventListener('click', () => {
+  document.documentElement.classList.toggle('dark-mode');
+  const isDark = document.documentElement.classList.contains('dark-mode');
+  themeToggle.textContent = isDark ? 'Light' : 'Dark';
+  themeToggle.setAttribute('aria-pressed', String(isDark));
+  // optionally store preference
+  try { localStorage.setItem('siteTheme', isDark ? 'dark' : 'light'); } catch(e){}
+});
+
+// on load: restore
+try {
+  const saved = localStorage.getItem('siteTheme');
+  if (saved === 'dark') document.documentElement.classList.add('dark-mode');
+  if (document.documentElement.classList.contains('dark-mode')) themeToggle && (themeToggle.textContent = 'Light');
+} catch(e){}
