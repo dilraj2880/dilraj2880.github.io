@@ -110,33 +110,33 @@ body{background:var(--bg);color:var(--text);line-height:1.5;-webkit-font-smoothi
 a:focus, button:focus, input:focus, textarea:focus{outline:3px solid rgba(11,99,246,0.12);outline-offset:4px}
 /* ===== NAVBAR (Improved Contrast + Clean) ===== */
 
-.site-nav {
-  position: sticky;
+.site-nav { position: sticky; top: 0; z-index: 999; }
+
+
+.site-nav .chat-btn {
+  position: absolute;
   top: 12px;
-  z-index: 999;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(8px);
-  border-radius: 14px;
-  box-shadow: 0 6px 18px rgba(10, 20, 40, 0.06);
-  margin: 12px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.site-nav.scrolled {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(10, 20, 40, 0.12);
-}
-
-.site-nav .nav-inner {
-  display: flex;
+  right: 16px;
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 12px 18px;
-  max-width: 1100px;
-  margin: 0 auto;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #22c55e, #10b981); 
+  box-shadow: 0 6px 18px rgba(16,24,40,0.12);
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
 }
 
+
+@media (max-width: 720px) {
+  .site-nav .chat-btn { top: 10px; right: 12px; padding: 8px 10px; }
+  .site-nav { padding-right: 70px; } 
+  
+}
+ 
+  
 /* brand title */
 .brand {
   font-weight: 800;
