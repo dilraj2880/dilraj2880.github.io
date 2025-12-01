@@ -1,61 +1,292 @@
+<!-- index.html -->
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Gym Demo — Premium Fitness</title>
-  <meta name="description" content="Gym website demo with membership, schedule and contact." />
-  <link rel="stylesheet" href="styles.css" />
+  <title>IronFit — Gym & Fitness</title>
+  <meta name="description" content="IronFit Gym — Personal training, group classes, nutrition plans. Join now.">
+  <link rel="stylesheet" href="gym-styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="wrap">
-      <a class="logo" href="/">Gym Demo</a>
+  <header class="gf-header">
+    <div class="gf-container header-inner">
+      <a class="gf-brand" href="#">IronFit</a>
+      <nav class="gf-nav" aria-label="Primary">
+        <a class="gf-link" href="#home">Home</a>
+        <a class="gf-link" href="#programs">Programs</a>
+        <a class="gf-link" href="#trainers">Trainers</a>
+        <a class="gf-link" href="#pricing">Pricing</a>
+        <a class="gf-link" href="#contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <a class="btn-cta" href="#pricing">Join Now</a>
+      </div>
+      <button id="gfMobileBtn" class="gf-hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
   <main>
-    <section class="hero gym-hero">
-      <div class="wrap hero-inner">
-        <div class="hero-media">
-          <img src="https://raw.githubusercontent.com/dilraj9351/dilraj9351.github.io/main/portfolio2.png" alt="Gym demo" />
+    <section id="home" class="gf-hero">
+      <div class="gf-container hero-inner">
+        <div class="hero-copy">
+          <h1>Train Hard. Stay Consistent.</h1>
+          <p class="lead">Personal training, group classes, and nutrition plans to help you reach your goals.</p>
+          <div class="hero-ctas">
+            <a class="btn-primary" href="#programs">View Programs</a>
+            <a class="btn-outline" href="#contact">Book a Trial</a>
+          </div>
+
+          <div class="hero-features">
+            <div class="feature">
+              <strong>Personal training</strong>
+              <span>1-on-1 coaching</span>
+            </div>
+            <div class="feature">
+              <strong>Group classes</strong>
+              <span>HIIT, Yoga, Strength</span>
+            </div>
+            <div class="feature">
+              <strong>Nutrition</strong>
+              <span>Custom meal plans</span>
+            </div>
+          </div>
         </div>
-        <div class="hero-text">
-          <h1>Build your gym's online presence</h1>
-          <p>Membership pages, class schedule, bookings and WhatsApp inquiries.</p>
-          <div class="cta-row">
-            <a class="btn primary" href="https://wa.me/919351996276?text=Hi,%20I%20want%20a%20gym%20website" target="_blank">Get Started ₹1499</a>
-            <a class="btn ghost" href="#contact">View features</a>
+
+        <div class="hero-media" aria-hidden="true">
+          <img src="gym-hero.jpg" alt="Gym workout scene">
+        </div>
+      </div>
+    </section>
+
+    <section id="programs" class="gf-section">
+      <div class="gf-container">
+        <h2>Programs</h2>
+        <div class="program-grid">
+          <article class="program-card">
+            <h3>Beginner</h3>
+            <p class="muted">Fundamentals, form, mobility.</p>
+            <ul>
+              <li>4-week plan</li>
+              <li>Intro sessions</li>
+              <li>Support chat</li>
+            </ul>
+            <div class="price">$29</div>
+            <a class="btn-small" href="#contact">Get Started</a>
+          </article>
+
+          <article class="program-card">
+            <h3>Strength</h3>
+            <p class="muted">Build muscle & power.</p>
+            <ul>
+              <li>12-week plan</li>
+              <li>Progress tracking</li>
+              <li>Nutrition guide</li>
+            </ul>
+            <div class="price">$69</div>
+            <a class="btn-small" href="#contact">Get Started</a>
+          </article>
+
+          <article class="program-card">
+            <h3>Transformation</h3>
+            <p class="muted">Fat loss + muscle gain.</p>
+            <ul>
+              <li>16-week program</li>
+              <li>Daily check-ins</li>
+              <li>Customized meals</li>
+            </ul>
+            <div class="price">$129</div>
+            <a class="btn-small" href="#contact">Get Started</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="trainers" class="gf-section gf-muted">
+      <div class="gf-container">
+        <h2>Our Trainers</h2>
+        <div class="trainers-grid">
+          <figure class="trainer">
+            <img src="trainer1.jpg" alt="Trainer 1">
+            <figcaption>
+              <strong>Ravi</strong>
+              <span>Strength Coach</span>
+            </figcaption>
+          </figure>
+
+          <figure class="trainer">
+            <img src="trainer2.jpg" alt="Trainer 2">
+            <figcaption>
+              <strong>Asha</strong>
+              <span>HIIT & Cardio</span>
+            </figcaption>
+          </figure>
+
+          <figure class="trainer">
+            <img src="trainer3.jpg" alt="Trainer 3">
+            <figcaption>
+              <strong>Vik</strong>
+              <span>Nutrition Specialist</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="gf-section">
+      <div class="gf-container">
+        <h2>Membership Pricing</h2>
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <h4>Monthly</h4>
+            <div class="amount">$29</div>
+            <ul>
+              <li>Unlimited gym access</li>
+              <li>Free Wi-Fi</li>
+            </ul>
+            <a class="btn-primary" href="#contact">Join Monthly</a>
+          </div>
+
+          <div class="pricing-card featured">
+            <h4>Quarterly</h4>
+            <div class="amount">$79</div>
+            <ul>
+              <li>Training workshops</li>
+              <li>1 free PT session</li>
+            </ul>
+            <a class="btn-primary" href="#contact">Join Quarterly</a>
+          </div>
+
+          <div class="pricing-card">
+            <h4>Yearly</h4>
+            <div class="amount">$249</div>
+            <ul>
+              <li>All benefits + discounts</li>
+              <li>Priority booking</li>
+            </ul>
+            <a class="btn-primary" href="#contact">Join Yearly</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section features">
-      <div class="wrap grid-2">
-        <div class="feature-card">
-          <h3>Membership Plans</h3>
-          <p>Create and show pricing & sign-up form.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Schedule & Booking</h3>
-          <p>Class schedule integrated with booking form.</p>
-        </div>
-      </div>
-    </section>
+    <section id="contact" class="gf-section gf-contact">
+      <div class="gf-container">
+        <h2>Book a Free Trial</h2>
+        <form id="gfContact" class="gf-form" action="https://formsubmit.co/dilrajmeena2880@gmail.com" method="POST">
+          <input type="hidden" name="_next" value="https://dilraj9351.github.io/thanks.html">
+          <div class="form-row">
+            <label>
+              Name
+              <input name="name" type="text" required>
+            </label>
+            <label>
+              Phone
+              <input name="phone" type="tel" placeholder="+91..." required>
+            </label>
+          </div>
 
-    <section id="contact" class="section contact">
-      <div class="wrap">
-        <h2>Contact</h2>
-        <a class="btn whatsapp" href="https://wa.me/919351996276?text=Hi,%20I%20want%20a%20gym%20website" target="_blank">Message on WhatsApp</a>
+          <div class="form-row">
+            <label>
+              Email
+              <input name="email" type="email" required>
+            </label>
+            <label>
+              Preferred Program
+              <select name="program">
+                <option>Beginner</option>
+                <option>Strength</option>
+                <option>Transformation</option>
+              </select>
+            </label>
+          </div>
+
+          <label>
+            Message
+            <textarea name="message" rows="4"></textarea>
+          </label>
+
+          <div class="form-actions">
+            <button class="btn-primary" type="submit">Request Trial</button>
+            <div class="muted-note">We will call you within 24 hours</div>
+          </div>
+        </form>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap">© <span id="year"></span> Gym Demo — by Dilraj</div>
+  <footer class="gf-footer">
+    <div class="gf-container">
+      <div class="footer-row">
+        <div>© 2025 IronFit</div>
+        <div class="footer-actions">
+          <a href="tel:+919351996276">+91 9351996276</a>
+          <a href="mailto:dilrajmeena2880@gmail.com">dilrajmeena2880@gmail.com</a>
+        </div>
+      </div>
+    </div>
   </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <a class="gf-whatsapp" href="https://wa.me/919351996276" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#fff" d="M20.5 3.5A11.9 11.9 0 0 0 12 .5 11.5 11.5 0 0 0 .5 12c0 2 .5 3.9 1.5 5.6L.5 23.5l6-1.6A11.6 11.6 0 0 0 12 23.5 11.5 11.5 0 0 0 20.5 3.5z"/><path fill="#19c37d" d="M17.7 14.4c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.1l-1 1.2c-.2.2-.4.3-.7.2-1.3-.6-2.4-1.5-3.3-2.7-.2-.3-.2-.6 0-.8l.5-.6c.2-.3.3-.5.2-.8l-1-2.4c-.2-.5-.4-.5-.7-.5H7c-.3 0-.7.1-1 .4-.3.3-1 1-1 2.6 0 1.6 1.1 3.1 1.3 3.3.2.3 2.2 3.5 5.3 4.8 2 .9 2.9 1 4 .8.7-.1 1.9-.8 2.2-1.6.3-.8.3-1.4.2-1.5s-.3-.2-.6-.4z"/></svg>
+    Chat
+  </a>
+
+  <script>
+    (function(){
+      const mobileBtn = document.getElementById('gfMobileBtn');
+      const nav = document.querySelector('.gf-nav') || document.querySelector('.gf-nav');
+      if(mobileBtn){
+        mobileBtn.addEventListener('click', function(){
+          const open = this.getAttribute('aria-expanded') === 'true';
+          this.setAttribute('aria-expanded', String(!open));
+          if(!open){
+            document.querySelector('.gf-nav').style.display = 'flex';
+            document.querySelector('.gf-nav').style.flexDirection = 'column';
+            document.querySelector('.gf-nav').style.position = 'absolute';
+            document.querySelector('.gf-nav').style.right = '18px';
+            document.querySelector('.gf-nav').style.top = '72px';
+            document.querySelector('.gf-nav').style.background = '#fff';
+            document.querySelector('.gf-nav').style.padding = '12px';
+            document.querySelector('.gf-nav').style.borderRadius = '10px';
+            document.querySelector('.gf-nav').style.boxShadow = '0 10px 30px rgba(0,0,0,0.08)';
+          } else {
+            document.querySelector('.gf-nav').style.display = '';
+            document.querySelector('.gf-nav').style.position = '';
+            document.querySelector('.gf-nav').style.right = '';
+            document.querySelector('.gf-nav').style.top = '';
+            document.querySelector('.gf-nav').style.background = '';
+            document.querySelector('.gf-nav').style.padding = '';
+            document.querySelector('.gf-nav').style.borderRadius = '';
+            document.querySelector('.gf-nav').style.boxShadow = '';
+          }
+        });
+      }
+
+      document.querySelectorAll('a[href^="#"]').forEach(a=>{
+        a.addEventListener('click', function(e){
+          const href = this.getAttribute('href');
+          if(!href || href === '#') return;
+          const el = document.querySelector(href);
+          if(el){
+            e.preventDefault();
+            el.scrollIntoView({behavior:'smooth', block:'start'});
+          }
+        });
+      });
+
+      const form = document.getElementById('gfContact');
+      if(form){
+        form.addEventListener('submit', function(e){
+          const btn = this.querySelector('button[type="submit"]');
+          btn.disabled = true;
+          btn.textContent = 'Sending...';
+          setTimeout(()=>{ btn.disabled = false; btn.textContent = 'Request Trial'; }, 1200);
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
