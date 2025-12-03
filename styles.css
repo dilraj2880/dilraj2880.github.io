@@ -293,30 +293,19 @@ textarea{
     grid-template-columns:1fr;
   }
 }
+:root {
+  --bg: #f5f8fb;
+  --text: #0f1724;
+}
+
 body.dark {
-    background: #0d1117;
-    color: #ffffff;
+  --bg: #0b1220;
+  --text: #e6eef8;
 }
 
-body.dark header {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-}
-
-body.dark h1, 
-body.dark h2, 
-body.dark h3, 
-body.dark p {
-    color: #fff;
-}
-
-body.dark .card {
-    background: #161b22;
-    color: #fff;
-}
-
-body.dark nav a {
-    color: #fff;
+body {
+  background: var(--bg);
+  color: var(--text);
 }
 .pay-btn {
     display: inline-block;
