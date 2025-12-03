@@ -113,3 +113,18 @@
   }
 })();
 ```0
+// Dark mode toggle
+document.addEventListener("DOMContentLoaded", () => {
+  const themeToggle = document.getElementById("themeToggle");
+
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+
+    // Button text change
+    if (document.body.classList.contains("dark-mode")) {
+      themeToggle.textContent = "Light";
+    } else {
+      themeToggle.textContent = "Dark";
+    }
+  });
+});
