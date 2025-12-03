@@ -293,3 +293,28 @@ textarea{
     grid-template-columns:1fr;
   }
 }
+body.dark {
+    background: #0d1117;
+    color: #ffffff;
+}
+
+body.dark header {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+}
+
+body.dark h1, 
+body.dark h2, 
+body.dark h3, 
+body.dark p {
+    color: #fff;
+}
+
+body.dark .card {
+    background: #161b22;
+    color: #fff;
+}
+
+body.dark nav a {
+    color: #fff;
+}
